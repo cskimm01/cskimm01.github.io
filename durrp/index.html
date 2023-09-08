@@ -19,7 +19,7 @@
     
     
       
-        <title>DURRP: A software clone of an alternative style watch - Chris Kimmons' Portfolio</title>
+        <title>DURRP: An alternative time keeping solution - Chris Kimmons' Portfolio</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DURRP:  A software clone of an alternative style watch
+              DURRP:  An alternative time keeping solution
             
           </span>
         </div>
@@ -194,7 +194,7 @@
 
   <li class="md-tabs__item">
     <a href="./" class="md-tabs__link md-tabs__link--active">
-      DURRP:  A software clone of an alternative style watch
+      DURRP:  An alternative time keeping solution
     </a>
   </li>
 
@@ -294,7 +294,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        DURRP:  A software clone of an alternative style watch
+        DURRP:  An alternative time keeping solution
       </a>
       
     </li>
@@ -316,7 +316,7 @@
                   
 
 
-  <h1>DURRP:  A software clone of an alternative style watch</h1>
+  <h1>DURRP:  An alternative time keeping solution</h1>
 
 <script>
 (function (global, factory) {
@@ -1355,7 +1355,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>DURRP:  A software clone of an alternative style watch</p>
+<p>DURRP:  An alternative time keeping solution</p>
 
 </div>
 </div>
@@ -1381,13 +1381,29 @@ Licensed under the Apache License, Version 2.0.
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This script is basically a software clone of the DURR watch, by the Scandinavian design team Skrekkogle. </span>
+<span class="sd">Details can be found at http://skrekkogle.com/projects/durr/.</span>
+
+<span class="sd">As someone who suffers from ADHD, this is the kind of tool I had always wanted as a kid. </span>
+<span class="sd">Every five minutes it makes a sound and delivers an encouraging message, to help </span>
+<span class="sd">remind you how quickly your time is passing.  Skrekogle only produced a limited amount </span>
+<span class="sd">of the hardware version, so they are no longer available. So I made my own software version!</span>
+
+<span class="sd">You can start it yourself everyday or use chron to automate.</span>
+<span class="sd">&#39;&#39;&#39;</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt">import time
-import subprocess
-import sys</div>
+<div id="cell-1" class="clipboard-copy-txt">'''
+This script is basically a software clone of the DURR watch, by the Scandinavian design team Skrekkogle. 
+Details can be found at http://skrekkogle.com/projects/durr/.
+
+As someone who suffers from ADHD, this is the kind of tool I had always wanted as a kid. 
+Every five minutes it makes a sound and delivers an encouraging message, to help 
+remind you how quickly your time is passing.  Skrekogle only produced a limited amount 
+of the hardware version, so they are no longer available. So I made my own software version!
+
+You can start it yourself everyday or use chron to automate.
+'''</div>
         
         </div>
     </div>
@@ -1417,17 +1433,13 @@ import sys</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">def</span> <span class="nf">show_notification</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
-    <span class="c1"># Use AppleScript with a timeout option to clear the notification after 60 seconds (1 minute)</span>
-    <span class="c1">#script = f&#39;\&quot;display notification {message} with title {title} giving up after 60\&quot;&#39;</span>
-    <span class="n">script</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;display notification &quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&quot; with title &quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s1">&quot; subtitle &quot;You</span><span class="se">\&#39;</span><span class="s1">ve Got This!&quot; sound name &quot;Submarine&quot; giving up after 60&#39;</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;osascript&#39;</span><span class="p">,</span> <span class="s1">&#39;-e&#39;</span><span class="p">,</span> <span class="n">script</span><span class="p">])</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">def show_notification(title, message):
-    # Use AppleScript with a timeout option to clear the notification after 60 seconds (1 minute)
-    #script = f'\"display notification {message} with title {title} giving up after 60\"'
-    script = f'display notification "{title}" with title "{message}" subtitle "You\'ve Got This!" sound name "Submarine" giving up after 60'
-    subprocess.run(['osascript', '-e', script])</div>
+<div id="cell-2" class="clipboard-copy-txt">import time
+import subprocess
+import sys</div>
         
         </div>
     </div>
@@ -1457,61 +1469,15 @@ import sys</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    
-    <span class="n">current_hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H&quot;</span><span class="p">))</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">start_hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="n">end_hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
-        <span class="n">start_hour</span> <span class="o">=</span> <span class="n">current_hour</span>
-        <span class="n">end_hour</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_hour</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">24</span>
-
-    <span class="n">am_pm</span> <span class="o">=</span> <span class="s1">&#39;AM&#39;</span> <span class="k">if</span> <span class="n">current_hour</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="k">else</span> <span class="s1">&#39;PM&#39;</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;durr.py running at hour </span><span class="si">{</span><span class="n">current_hour</span><span class="o">%</span><span class="mi">12</span><span class="si">}{</span><span class="n">am_pm</span><span class="si">}</span><span class="s1">, ending at </span><span class="si">{</span><span class="n">end_hour</span><span class="si">}{</span><span class="n">am_pm</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        
-        <span class="n">current_epoch</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span> <span class="c1"># current hour needs to update for while loop</span>
-        <span class="k">if</span> <span class="n">start_hour</span> <span class="o">&lt;=</span> <span class="n">current_epoch</span> <span class="o">&lt;</span> <span class="n">end_hour</span><span class="p">:</span>
-            <span class="n">show_notification</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">5 Minutes Has Passed!</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">DURRP</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>  <span class="c1"># 300 seconds = 5 minutes</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>  <span class="c1"># 60 seconds = 1 minute</span>
-
-        <span class="k">if</span> <span class="n">current_hour</span> <span class="o">&gt;=</span> <span class="n">end_hour</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;durr.py terminating at </span><span class="si">{</span><span class="n">end_hour</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="k">break</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">def</span> <span class="nf">show_notification</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="c1"># Use AppleScript with a timeout option to clear the notification after 60 seconds (1 minute)</span>
+    <span class="n">script</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;display notification &quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&quot; with title &quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s1">&quot; subtitle &quot;You</span><span class="se">\&#39;</span><span class="s1">ve Got This!&quot; sound name &quot;Submarine&quot;&#39;</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;osascript&#39;</span><span class="p">,</span> <span class="s1">&#39;-e&#39;</span><span class="p">,</span> <span class="n">script</span><span class="p">])</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">def main():
-    
-    current_hour = int(time.strftime("%H"))
-
-    try:
-        start_hour = int(sys.argv[1])
-        end_hour = int(sys.argv[2])
-    except IndexError:
-        start_hour = current_hour
-        end_hour = (current_hour + 2) * 24
-
-    am_pm = 'AM' if current_hour < 12 else 'PM'
-
-    print(f'durr.py running at hour {current_hour%12}{am_pm}, ending at {end_hour}{am_pm}')
-
-    while True:
-        
-        current_epoch = int(time.time()) # current hour needs to update for while loop
-        if start_hour <= current_epoch < end_hour:
-            show_notification("\'5 Minutes Has Passed!\'", "\'DURRP\'")
-            time.sleep(300)  # 300 seconds = 5 minutes
-        else:
-            time.sleep(30)  # 60 seconds = 1 minute
-
-        if current_hour >= end_hour:
-            print(f'durr.py terminating at {end_hour}')
-            break</div>
+<div id="cell-3" class="clipboard-copy-txt">def show_notification(title, message):
+    # Use AppleScript with a timeout option to clear the notification after 60 seconds (1 minute)
+    script = f'display notification "{title}" with title "{message}" subtitle "You\'ve Got This!" sound name "Submarine"'
+    subprocess.run(['osascript', '-e', script])</div>
         
         </div>
     </div>
@@ -1541,11 +1507,107 @@ import sys</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    
+    <span class="n">current_hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H&quot;</span><span class="p">))</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">start_hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">end_hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+        <span class="n">start_hour</span> <span class="o">=</span> <span class="n">current_hour</span>
+        <span class="n">end_hour</span> <span class="o">=</span> <span class="mi">17</span>
+
+    <span class="c1"># small function to determine AM and PM</span>
+    <span class="n">am_pm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">hour</span><span class="p">:</span> <span class="s1">&#39;AM&#39;</span> <span class="k">if</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="k">else</span> <span class="s1">&#39;PM&#39;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;durr.py running at hour </span><span class="si">{</span><span class="n">current_hour</span><span class="o">%</span><span class="mi">12</span><span class="si">}{</span><span class="n">am_pm</span><span class="p">(</span><span class="n">current_hour</span><span class="p">)</span><span class="si">}</span><span class="s1">, ending at </span><span class="si">{</span><span class="n">end_hour</span><span class="o">%</span><span class="mi">12</span><span class="si">}{</span><span class="n">am_pm</span><span class="p">(</span><span class="n">end_hour</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> press ^+c to end&#39;</span><span class="p">)</span>
+
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        
+        <span class="n">current_hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">start_hour</span> <span class="o">&lt;=</span> <span class="n">current_hour</span> <span class="o">&lt;</span> <span class="n">end_hour</span><span class="p">:</span>
+            <span class="n">show_notification</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">5 Minutes Has Passed!</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">DURRP</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>  <span class="c1"># 300 seconds = 5 minutes</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>  <span class="c1"># 60 seconds = 1 minute</span>
+
+        <span class="k">if</span> <span class="n">current_hour</span> <span class="o">&gt;=</span> <span class="n">end_hour</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;durr.py terminating at </span><span class="si">{</span><span class="n">end_hour</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">break</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">if __name__ == "__main__":
-    main()</div>
+<div id="cell-4" class="clipboard-copy-txt">def main():
+    
+    current_hour = int(time.strftime("%H"))
+
+    try:
+        start_hour = int(sys.argv[1])
+        end_hour = int(sys.argv[2])
+    except IndexError:
+        start_hour = current_hour
+        end_hour = 17
+
+    # small function to determine AM and PM
+    am_pm = lambda hour: 'AM' if hour < 12 else 'PM'
+
+    print(f'durr.py running at hour {current_hour%12}{am_pm(current_hour)}, ending at {end_hour%12}{am_pm(end_hour)} \n press ^+c to end')
+
+
+    while True:
+        
+        current_hour = int(time.strftime("%H"))
+        if start_hour <= current_hour < end_hour:
+            show_notification("\'5 Minutes Has Passed!\'", "\'DURRP\'")
+            time.sleep(300)  # 300 seconds = 5 minutes
+        else:
+            time.sleep(30)  # 60 seconds = 1 minute
+
+        if current_hour >= end_hour:
+            print(f'durr.py terminating at {end_hour}')
+            break</div>
+        
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="zeroclipboard-container">
+                <clipboard-copy for="cell-5">
+                <div>
+                    <span class="notice" hidden>Copied!</span>
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                        <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                        <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                    </svg>
+                    </div>
+                </clipboard-copy>
+            </div>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">main</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;: durrp.py terminated by user at </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%I&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%M%p&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+<div id="cell-5" class="clipboard-copy-txt">if __name__ == "__main__":
+    
+    try:
+        main()
+    except KeyboardInterrupt:
+        print(f': durrp.py terminated by user at {time.strftime("%I")}:{time.strftime("%M%p")}')</div>
         
         </div>
     </div>
