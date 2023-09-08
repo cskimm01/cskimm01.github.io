@@ -393,15 +393,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-the-dashboard" class="md-nav__link">
-    Creating the Dashboard
+  <a href="#phase-5-creating-the-dashboard" class="md-nav__link">
+    Phase 5: Creating the Dashboard
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-the-database" class="md-nav__link">
-    Creating the Database
+  <a href="#phase-6-creating-the-database" class="md-nav__link">
+    Phase 6: Creating the Database
   </a>
   
 </li>
@@ -2035,10 +2035,10 @@ class="
 <p>For this section, if you would like to follow along, use this script:</p>
 <p>My Brother-In-Law, who is a data scientist, coached me through the basics or parsing the data in Python. I started by pulling lists of the unique values in the us-counties.csv files.  I started with states data, since that table was the smallest. I started by using <code>dict(zip('range(len(states_unique))','states'))</code>to create keys for each unique value. This worked for the states at first, but things got hairy when I had to merge the population data.  My table from the census didn't include all of the territories, so I had to go get those figures from other files from the census.</p>
 <p>Then things got even more out of hand with creating the county keys.  There are, of course, many counties that share names from state to state.  It's no surprise that &quot;Washington is the most common county name, across 31 states. So each of thes would need its own id number.  THe first time I used the <code>dict(zip())</code> method, I had grouped the common-named states together into one index.  While this may have worked under certain circumstances, it did'nt seem to work for me.  So I switched tactics, and started using <code>pd.merge()</code> to join tables.  It's validation parameter was very helpful in making sure everything was copied either 1 to 1 or 1 to many.  After all of the merges, I just created a column as the <code>index + 1</code>.</p>
-<h2 id="creating-the-dashboard">Creating the Dashboard<a class="anchor-link" href="#creating-the-dashboard">&#182;</a></h2><p>With everthing indexed and ready to go, it was time to start loading into Tableau.  Tableau's data source UI took some getting used to, and I made some mistakes at first.  But I got my files hooked up with the right connections, and was able to tune the performance options.</p>
+<h2 id="phase-5-creating-the-dashboard">Phase 5: Creating the Dashboard<a class="anchor-link" href="#phase-5-creating-the-dashboard">&#182;</a></h2><p>With everthing indexed and ready to go, it was time to start loading into Tableau.  Tableau's data source UI took some getting used to, and I made some mistakes at first.  But I got my files hooked up with the right connections, and was able to tune the performance options.</p>
 <p>Time to start making some graphs! But...</p>
 <p>I had a lot of trial and error getting my visualizations to work.  Matplotlib had actually been easier to work with; or at least seemed easier.  Tableau had a whole different approach with it UI, and so many levels and layers to the structure of the data between the source and the final viz.</p>
-<h2 id="creating-the-database">Creating the Database<a class="anchor-link" href="#creating-the-database">&#182;</a></h2><p>Creating the indexes in Python worked well for creating the csv to load to Tableau, it was my original plan to load them into a SQL database, with the index being set by an autoincrementing column.  When I went to put the data into my schema, I had not anticipated having the indexes already generated.</p>
+<h2 id="phase-6-creating-the-database">Phase 6: Creating the Database<a class="anchor-link" href="#phase-6-creating-the-database">&#182;</a></h2><p>Creating the indexes in Python worked well for creating the csv to load to Tableau, it was my original plan to load them into a SQL database, with the index being set by an autoincrementing column.  When I went to put the data into my schema, I had not anticipated having the indexes already generated.</p>
 
 </div>
 </div>
