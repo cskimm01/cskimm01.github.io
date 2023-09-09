@@ -204,7 +204,7 @@
   
     <li class="md-tabs__item">
       <a href="../Melody_Graph/graphing_melodies/" class="md-tabs__link">
-        Melody Graphing- Melodies as Functions
+        Melody Graphing, Melodies as Functions
       </a>
     </li>
   
@@ -497,14 +497,14 @@
       
       
         <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-          Melody Graphing- Melodies as Functions
+          Melody Graphing, Melodies as Functions
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Melody Graphing- Melodies as Functions
+          Melody Graphing, Melodies as Functions
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1605,7 +1605,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This project focuses on database architecture fundamentals, tableau dashbord building, and data cleaning...</p>
+<p>This project focuses on database architecture fundamentals, Tableau dashboard building, and data cleaning</p>
 <h2 id="phase-1-project-origins">Phase 1: Project Origins<a class="anchor-link" href="#phase-1-project-origins">&#182;</a></h2><h4 id="topicsskills-used">Topics/Skills Used<a class="anchor-link" href="#topicsskills-used">&#182;</a></h4><ul>
 <li>Analysis of NYT covid data over 3 years</li>
 <li>data cleaning: python/pandas</li>
@@ -2020,7 +2020,7 @@ print(*covid_case_files, sep='\n')</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="phase-3-the-eda">Phase 3: The EDA<a class="anchor-link" href="#phase-3-the-eda">&#182;</a></h2><p>(FYI: I will not be including code examples in this section.  My original eda script was pretty messy and involved a lot more code than was necessary.  All part of the learning process, but I'll spare the details here.  To view the script mentioned here got to <a href="https://github.com/cskimm01/NYT_COV_visualize/blob/main/covid_visuals.ipynb">https://github.com/cskimm01/NYT_COV_visualize/blob/main/covid_visuals.ipynb</a>).  This was really the first thing I ever coded independently, so please be forgiving if you would.  I knew how to get things to work, mostly. I didn't know any clean code concepts or best practices at that time.  But in the end, it did it's job by getting me started with exploring the dataset.</p>
+<h2 id="phase-3-the-eda">Phase 3: The EDA<a class="anchor-link" href="#phase-3-the-eda">&#182;</a></h2><p>(FYI: I will not be including the original code examples in this section.  My original eda script was pretty messy and involved a lot more code than was necessary.  All part of the learning process, but I'll spare the details here.  To view the script mentioned here got to <a href="https://github.com/cskimm01/NYT_COV_visualize/blob/main/covid_visuals.ipynb">https://github.com/cskimm01/NYT_COV_visualize/blob/main/covid_visuals.ipynb</a>).  This was really the first thing I ever coded independently, so please be forgiving if you would.  I knew how to get things to work, mostly. I didn't know any clean code concepts or best practices at that time.  But in the end, it did it's job by getting me started with exploring the dataset.</p>
 <h4 id="first-visualizations-with-pyplot">First Visualizations with Pyplot<a class="anchor-link" href="#first-visualizations-with-pyplot">&#182;</a></h4><p>I started by cherry picking locations I was interested in; My hometown (Kanawha County, WV), where I live now (Cook County, IL), where my family members live, and so on.  And with this I learned how to get the visualizations I wanted, using pyplot from matplotlib.  And my code usually worked, but as I panned out further, I realized many exceptions in the data set.  Not every state has counties: some have parishes, some have boroughs.  Many couties share names (Jackson is the most common county name in the US). Getting a naming convention to work across the board was a challenge. This would be solved later by creating a star schema and assigning unique ids to each state and county.</p>
 
 </div>
@@ -2325,7 +2325,7 @@ class="
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Note: the graph above does not account for population.  For more depth, refer to the link above.</p>
 <p>At first glance trends looked pretty similar, especially when set against a region’s population. This would need to be tested later against regions I had not selected for personal reasons.</p>
-<p>One more disclaimer: while I recognize that analytical skills are necessary for any data application, the purpose of this project was to demonstrate data engineering and achitecture principles. I wasn't iterested ()</p>
+<p>One more disclaimer: while I recognize that analytical skills are necessary for any data application, the purpose of this project was to demonstrate data engineering and achitecture principles. I could have done much more statistical analysis, but chose to work more on the engineering side, for this time.</p>
 <h4 id="aggregations-and-missing-data">Aggregations and Missing Data<a class="anchor-link" href="#aggregations-and-missing-data">&#182;</a></h4><p>As I dug a bit deeper, I realized the weird catches in the data.  New York City had been aggregated from its five counties to a whole.  Also, certain parts of Alaska were combined to make the populations more relevant.  This was all spelled out in the NYT Github documentation.</p>
 <p>There were a number of NULL FIPS numbers.  They mostly fixed by replacing them with a city code.  The only other NULLs were in Puerto Rico,  where deaths were not reported at the municipio (county) level.  Just Zero them out for now, all done.</p>
 <p>Because of some strange reprting in Missouri, Kansas City and Joplin MI reported separately from the counties they occupy.  New York City posed the same problem, that the city numer were reported, but not a the county level.  So I just aggregated the cities and their counties together, instead of picking apart populations for each.</p>
@@ -2340,7 +2340,9 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="phase-4-creating-the-star-schema">Phase 4: Creating the Star Schema<a class="anchor-link" href="#phase-4-creating-the-star-schema">&#182;</a></h2><p>After getting the hang of a few of the details of the dataset, I started a new script to parse the county-level data into dimension and fact tables. All of the data from this dataset comes from the four us-county.csv files from the New York Times. The plan was to parse the data into three dimension tables:</p>
+<h2 id="phase-4-creating-the-star-schema">Phase 4: Creating the Star Schema<a class="anchor-link" href="#phase-4-creating-the-star-schema">&#182;</a></h2><p>If you want follow along, go to <a href="https://github.com/cskimm01/NYT_COV_visualize/blob/main/star_schema_final.ipynb">https://github.com/cskimm01/NYT_COV_visualize/blob/main/star_schema_final.ipynb</a>
+And if you want to see every mistake I made along the way, check out <a href="https://github.com/cskimm01/NYT_COV_visualize/blob/main/star_schema_build.ipynb">https://github.com/cskimm01/NYT_COV_visualize/blob/main/star_schema_build.ipynb</a></p>
+<p>After getting the hang of a few of the details of the dataset, I started a new script to parse the county-level data into dimension and fact tables. All of the data from this dataset comes from the four us-county.csv files from the New York Times. The plan was to parse the data into three dimension tables:</p>
 <ul>
 <li>dimState</li>
 <li>dimDate</li>
@@ -2352,8 +2354,8 @@ class="
 </ul>
 <p>While they had descibed star schemas in my data engineering course, we never build one from scratch and populated the data.  So , this was all new territory for me.</p>
 <p>For this section, if you would like to follow along, use this script:</p>
-<h4 id="setting-id-columns">Setting ID columns<a class="anchor-link" href="#setting-id-columns">&#182;</a></h4><p>My Brother-In-Law, who is a data scientist, coached me through the basics or parsing the data in Python. I started by pulling lists of the unique values in the us-counties.csv files.  I started with states data, since that table was the smallest. I started by using <code>dict(zip('range(len(states_unique))','states'))</code>to create keys for each unique value. This worked for the states at first, but things got hairy when I had to merge the population data.  My table from the census didn't include all of the territories, so I had to go get those figures from other files from the census.</p>
-<p>Then things got even more out of hand with creating the county keys.  There are, of course, many counties that share names from state to state.  It's no surprise that &quot;Washington is the most common county name, across 31 states. So each of thes would need its own id number.  THe first time I used the <code>dict(zip())</code> method, I had grouped the common-named states together into one index.  While this may have worked under certain circumstances, it did'nt seem to work for me.  So I switched tactics, and started using <code>pd.merge()</code> to join tables.  It's validation parameter was very helpful in making sure everything was copied either 1 to 1 or 1 to many.  After all of the merges, I just created a column as the <code>index + 1</code>.</p>
+<h4 id="setting-id-columns">Setting ID columns<a class="anchor-link" href="#setting-id-columns">&#182;</a></h4><p>My mentor, who is a working data scientist, coached me through the basics or parsing the data in Python. I started by pulling lists of the unique values in the us-counties.csv files.  I started with states data, since that table was the smallest. I started by using <code>dict(zip('range(len(states_unique))','states'))</code>to create keys for each unique value. This worked for the states at first, but things got hairy when I had to merge the population data.  My table from the census didn't include all of the territories, so I had to go get those figures from other files from the census.</p>
+<p>Then things got even more out of hand with creating the county keys.  There are, of course, many counties that share names from state to state.  It's no surprise that &quot;Washington&quot; is the most common county name, across 31 states. So each of these counties would need its own id number.  The first time I used the <code>dict(zip())</code> method, I had grouped the common-named states together into one index.  While this may have worked under certain circumstances, it did'nt seem to work for me.  So I switched tactics, and started using <code>pd.merge()</code> to join tables.  It's validation parameter was very helpful in making sure everything was copied either 1 to 1 or 1 to many.  After all of the merges, I just created a column as the <code>index + 1</code>.</p>
 <p>The date table was a piece of cake after all of that.</p>
 <h4 id="fact-table-aggregations">Fact Table Aggregations<a class="anchor-link" href="#fact-table-aggregations">&#182;</a></h4><p>The fact table was tricky again.  The aggregations had to be done correctly for the data to match the populations in the dimension tables.  Then it was just a matter of making the id columns were properly set to fact table, and drop all the old columns.  And Oila! You've got a normalized dataset!</p>
 
