@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#about" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -167,18 +172,6 @@
 
 
   <li class="md-tabs__item">
-    <a href="../AboutMe/" class="md-tabs__link">
-      About Me
-    </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
     <a href="../covid_blog/" class="md-tabs__link">
       Project 1: NYT Covid Dashboard
     </a>
@@ -256,21 +249,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../AboutMe/" class="md-nav__link">
-        About Me
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../covid_blog/" class="md-nav__link">
         Project 1: NYT Covid Dashboard
       </a>
@@ -293,9 +271,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DURRP:  An alternative time keeping solution
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         DURRP:  An alternative time keeping solution
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    About
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-function" class="md-nav__link">
+    message function
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1360,6 +1374,17 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="about">About<a class="anchor-link" href="#about">&#182;</a></h2>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -1382,10 +1407,10 @@ Licensed under the Apache License, Version 2.0.
                 </clipboard-copy>
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">This script is basically a software clone of the DURR watch, by the Scandinavian design team Skrekkogle. </span>
+<span class="sd">This script is basically a software recreation of the DURR watch, by the Scandinavian design team Skrekkogle. </span>
 <span class="sd">Details can be found at http://skrekkogle.com/projects/durr/.</span>
 
-<span class="sd">As someone who suffers from ADHD, this is the kind of tool I had always wanted as a kid. </span>
+<span class="sd">As someone who has ADHD, this is the kind of tool I had always wanted as a kid. </span>
 <span class="sd">Every five minutes it makes a sound and delivers an encouraging message, to help </span>
 <span class="sd">remind you how quickly your time is passing.  Skrekogle only produced a limited amount </span>
 <span class="sd">of the hardware version, so they are no longer available. So I made my own software version!</span>
@@ -1394,10 +1419,10 @@ Licensed under the Apache License, Version 2.0.
 <span class="sd">&#39;&#39;&#39;</span>
 </pre></div>
 <div id="cell-1" class="clipboard-copy-txt">'''
-This script is basically a software clone of the DURR watch, by the Scandinavian design team Skrekkogle. 
+This script is basically a software recreation of the DURR watch, by the Scandinavian design team Skrekkogle. 
 Details can be found at http://skrekkogle.com/projects/durr/.
 
-As someone who suffers from ADHD, this is the kind of tool I had always wanted as a kid. 
+As someone who has ADHD, this is the kind of tool I had always wanted as a kid. 
 Every five minutes it makes a sound and delivers an encouraging message, to help 
 remind you how quickly your time is passing.  Skrekogle only produced a limited amount 
 of the hardware version, so they are no longer available. So I made my own software version!
@@ -1447,6 +1472,17 @@ import sys</div>
 </div>
 </div>
 
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="message-function">message function<a class="anchor-link" href="#message-function">&#182;</a></h2>
+</div>
+</div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1507,8 +1543,9 @@ import sys</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="c1">### main body</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
     <span class="n">current_hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H&quot;</span><span class="p">))</span>
 
     <span class="k">try</span><span class="p">:</span>
@@ -1523,7 +1560,6 @@ import sys</div>
 
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;durr.py running at hour </span><span class="si">{</span><span class="n">current_hour</span><span class="o">%</span><span class="mi">12</span><span class="si">}{</span><span class="n">am_pm</span><span class="p">(</span><span class="n">current_hour</span><span class="p">)</span><span class="si">}</span><span class="s1">, ending at </span><span class="si">{</span><span class="n">end_hour</span><span class="o">%</span><span class="mi">12</span><span class="si">}{</span><span class="n">am_pm</span><span class="p">(</span><span class="n">end_hour</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> press ^+c to end&#39;</span><span class="p">)</span>
 
-
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         
         <span class="n">current_hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H&quot;</span><span class="p">))</span>
@@ -1537,8 +1573,9 @@ import sys</div>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;durr.py terminating at </span><span class="si">{</span><span class="n">end_hour</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
             <span class="k">break</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">def main():
-    
+<div id="cell-4" class="clipboard-copy-txt">### main body
+def main():
+
     current_hour = int(time.strftime("%H"))
 
     try:
@@ -1552,7 +1589,6 @@ import sys</div>
     am_pm = lambda hour: 'AM' if hour < 12 else 'PM'
 
     print(f'durr.py running at hour {current_hour%12}{am_pm(current_hour)}, ending at {end_hour%12}{am_pm(end_hour)} \n press ^+c to end')
-
 
     while True:
         
@@ -1595,15 +1631,17 @@ import sys</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="c1">### run</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
     <span class="k">try</span><span class="p">:</span>
         <span class="n">main</span><span class="p">()</span>
     <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;: durrp.py terminated by user at </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%I&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%M%p&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">if __name__ == "__main__":
-    
+<div id="cell-5" class="clipboard-copy-txt">### run
+if __name__ == "__main__":
+
     try:
         main()
     except KeyboardInterrupt:

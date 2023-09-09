@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://www.cskimm01.gitub.io/covid_blog/">
       
       
-        <link rel="prev" href="../AboutMe/">
+        <link rel="prev" href="..">
       
       
         <link rel="next" href="../durrp/">
@@ -171,18 +171,6 @@
         
   
   
-
-
-  <li class="md-tabs__item">
-    <a href="../AboutMe/" class="md-tabs__link">
-      About Me
-    </a>
-  </li>
-
-      
-        
-  
-  
     
   
 
@@ -250,21 +238,6 @@
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         Home: Chris Kimmons
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../AboutMe/" class="md-nav__link">
-        About Me
       </a>
     </li>
   
@@ -390,12 +363,66 @@
     Phase 4: Creating the Star Schema
   </a>
   
+    <nav class="md-nav" aria-label="Phase 4: Creating the Star Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-id-columns" class="md-nav__link">
+    Setting ID columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fact-table-aggregations" class="md-nav__link">
+    Fact Table Aggregations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#phase-5-creating-the-dashboard" class="md-nav__link">
     Phase 5: Creating the Dashboard
   </a>
+  
+    <nav class="md-nav" aria-label="Phase 5: Creating the Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-map" class="md-nav__link">
+    The Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-plots" class="md-nav__link">
+    The Plots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactivity" class="md-nav__link">
+    Interactivity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refactoring" class="md-nav__link">
+    Refactoring
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1611,10 +1638,12 @@ import seaborn as sns</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">us_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/Users/chriskimmons/My_Projects/NYT_COV/covidCSV/us.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;date&#39;</span><span class="p">:</span><span class="s1">&#39;datetime64&#39;</span><span class="p">})</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">us_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/Users/chriskimmons/My_Projects/NYT_COV/covidCSV/us.csv&#39;</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;date&#39;</span><span class="p">:</span><span class="s1">&#39;datetime64&#39;</span><span class="p">}))</span>
 <span class="n">us_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">us_df = pd.read_csv('/Users/chriskimmons/My_Projects/NYT_COV/covidCSV/us.csv').astype({'date':'datetime64'})
+<div id="cell-2" class="clipboard-copy-txt">us_df = (pd.read_csv('/Users/chriskimmons/My_Projects/NYT_COV/covidCSV/us.csv')
+         .astype({'date':'datetime64'}))
 us_df.info()</div>
         
         </div>
@@ -1677,10 +1706,16 @@ memory usage: 27.3 KB
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">state_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/Users/chriskimmons/My_Projects/NYT_COV/covidCSV/us-states.csv&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">state_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/Users/chriskimmons/My_Projects/NYT_COV/covidCSV/us-states.csv&#39;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;date&#39;</span><span class="p">:</span><span class="s1">&#39;datetime64&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;state&#39;</span><span class="p">:</span><span class="s1">&#39;category&#39;</span><span class="p">})</span>
+                     <span class="p">)</span>
 <span class="n">state_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">state_df = pd.read_csv('/Users/chriskimmons/My_Projects/NYT_COV/covidCSV/us-states.csv')
+<div id="cell-3" class="clipboard-copy-txt">state_df = (pd.read_csv('/Users/chriskimmons/My_Projects/NYT_COV/covidCSV/us-states.csv')
+            .astype({'date':'datetime64',
+                     'state':'category'})
+                     )
 state_df.info()</div>
         
         </div>
@@ -1706,15 +1741,15 @@ state_df.info()</div>
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 61942 entries, 0 to 61941
 Data columns (total 5 columns):
- #   Column  Non-Null Count  Dtype 
----  ------  --------------  ----- 
- 0   date    61942 non-null  object
- 1   state   61942 non-null  object
- 2   fips    61942 non-null  int64 
- 3   cases   61942 non-null  int64 
- 4   deaths  61942 non-null  int64 
-dtypes: int64(3), object(2)
-memory usage: 2.4+ MB
+ #   Column  Non-Null Count  Dtype         
+---  ------  --------------  -----         
+ 0   date    61942 non-null  datetime64[ns]
+ 1   state   61942 non-null  category      
+ 2   fips    61942 non-null  int64         
+ 3   cases   61942 non-null  int64         
+ 4   deaths  61942 non-null  int64         
+dtypes: category(1), datetime64[ns](1), int64(3)
+memory usage: 2.0 MB
 </pre>
 </div>
 </div>
@@ -2004,7 +2039,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -2112,10 +2147,109 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This data shown above is all for the US totals only.  In my original script, I drill down further into states and counties. I wont do tha</p>
-<p>At first glance trends looked incredibly similar, especially when set against a region’s population. This would need to be tested later against regions I had not selected for personal reasons.</p>
+<p>This data shown above is all for the US totals only.  In my original script, I drill down further into states and counties. I wont do that here. refer to the link above to explore further down.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="zeroclipboard-container">
+                <clipboard-copy for="cell-8">
+                <div>
+                    <span class="notice" hidden>Copied!</span>
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                        <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                        <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                    </svg>
+                    </div>
+                </clipboard-copy>
+            </div>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">selected_states</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;California&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;Illinois&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;West Virginia&#39;</span>
+                   <span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">state_compare</span><span class="p">(</span><span class="n">list_of_places</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
+    <span class="n">find_rows</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">list_of_places</span><span class="p">)]</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">find_rows</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">find_rows</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">list_of_places</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">find_rows</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">find_rows</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">list_of_places</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">find_rows</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">find_rows</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">list_of_places</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+    
+<span class="n">state_compare</span><span class="p">(</span><span class="n">selected_states</span><span class="p">,</span><span class="n">state_df</span><span class="p">,</span><span class="s1">&#39;deaths&#39;</span><span class="p">)</span>
+</pre></div>
+<div id="cell-8" class="clipboard-copy-txt">
+selected_states = ['California',
+                   'Illinois',
+                   'West Virginia'
+                   ]
+
+def state_compare(list_of_places, df, column):
+    find_rows = df.loc[df.state.isin(list_of_places)]
+    
+    plt.plot(find_rows[f'{column}'].loc[find_rows.state == list_of_places[0]])
+    plt.plot(find_rows[f'{column}'].loc[find_rows.state == list_of_places[1]])
+    plt.plot(find_rows[f'{column}'].loc[find_rows.state == list_of_places[2]])
+    
+state_compare(selected_states,state_df,'deaths')</div>
+        
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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TURERAKsywehq666irKyMn7/+99TVFREdnY27733Hj179gx0aSIiIhJgXX4eodPVEeYREhERkVNzsr+/u/QYIREREZFvoyAkIiIiQUtBSERERIKWgpCIiIgELQUhERERCVoKQiIiIhK0FIREREQkaCkIiYiISNBSEBIREZGg1eWX2DhdhyferqqqCnAlIiIicrIO/94+0QIaCkInUF1dDUBWVlaAKxEREZFTVV1djdPpPO5+rTV2Al6vl/379xMbG4vNZmu1962qqiIrK4v8/HytYXYcOkcnpnN0YjpHJ6ZzdGI6R9+uI54fYwzV1dVkZGRgtx9/JJB6hE7AbreTmZnZZu8fFxfXYf7QdFQ6Ryemc3RiOkcnpnN0YjpH366jnZ9v6wk6TIOlRUREJGgpCImIiEjQUhAKEIfDwT333IPD4Qh0KR2WztGJ6RydmM7RiekcnZjO0bfrzOdHg6VFREQkaKlHSERERIKWgpCIiIgELQUhERERCVoKQiIiIhK0FIQC5LHHHqN3795EREQwcuRIPv/880CX1Co+++wzpk+fTkZGBjabjTfeeMNvvzGGe++9l4yMDCIjI7ngggvYsmWLXxu3282tt95KUlIS0dHRXHbZZRQUFPi1qaioYNasWTidTpxOJ7NmzaKystKvTV5eHtOnTyc6OpqkpCRuu+02PB5PWxz2SVuwYAFnn302sbGxpKSkcMUVV7Bjxw6/NsF+jh5//HGGDh3qm5ht7NixvP/++779wX5+jrZgwQJsNhtz5871bQv2c3Tvvfdis9n8Hmlpab79wX5+DissLOSaa64hMTGRqKgohg8fTk5Ojm9/0JwnI+1u4cKFJiwszDz99NNm69at5vbbbzfR0dEmNzc30KWdtvfee8/89re/Na+99poBzKJFi/z2P/DAAyY2Nta89tprZtOmTeaqq64y6enppqqqytfmlltuMd27dzdLly41a9euNRdeeKEZNmyYaWpq8rW5+OKLTXZ2tlmxYoVZsWKFyc7ONtOmTfPtb2pqMtnZ2ebCCy80a9euNUuXLjUZGRlmzpw5bX4Ovs2UKVPMs88+azZv3mzWr19vpk6danr06GFqamp8bYL9HL311lvm3XffNTt27DA7duwwv/nNb0xYWJjZvHmzMUbn50hr1qwxvXr1MkOHDjW33367b3uwn6N77rnHnHnmmaaoqMj3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"
+class="
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Note: the graph above does not account for population.  For more depth, refer to the link above.</p>
+<p>At first glance trends looked pretty similar, especially when set against a region’s population. This would need to be tested later against regions I had not selected for personal reasons.</p>
 <p>One more disclaimer: while I recognize that analytical skills are necessary for any data application, the purpose of this project was to demonstrate data engineering and achitecture principles. I wasn't iterested ()</p>
 <h4 id="aggregations-and-missing-data">Aggregations and Missing Data<a class="anchor-link" href="#aggregations-and-missing-data">&#182;</a></h4><p>As I dug a bit deeper, I realized the weird catches in the data.  New York City had been aggregated from its five counties to a whole.  Also, certain parts of Alaska were combined to make the populations more relevant.  This was all spelled out in the NYT Github documentation.</p>
+<p>There were a number of NULL FIPS numbers.  They mostly fixed by replacing them with a city code.  The only other NULLs were in Puerto Rico,  where deaths were not reported at the municipio (county) level.  Just Zero them out for now, all done.</p>
+<p>Because of some strange reprting in Missouri, Kansas City and Joplin MI reported separately from the counties they occupy.  New York City posed the same problem, that the city numer were reported, but not a the county level.  So I just aggregated the cities and their counties together, instead of picking apart populations for each.</p>
 
 </div>
 </div>
@@ -2127,7 +2261,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="phase-4-creating-the-star-schema">Phase 4: Creating the Star Schema<a class="anchor-link" href="#phase-4-creating-the-star-schema">&#182;</a></h2><p>After getting the hang of a few of the details of the dataset, I started a new script to parse the county-level data into dimension and fact tables. The plan was to parse the data into three dimension tables:</p>
+<h2 id="phase-4-creating-the-star-schema">Phase 4: Creating the Star Schema<a class="anchor-link" href="#phase-4-creating-the-star-schema">&#182;</a></h2><p>After getting the hang of a few of the details of the dataset, I started a new script to parse the county-level data into dimension and fact tables. All of the data from this dataset comes from the four us-county.csv files from the New York Times. The plan was to parse the data into three dimension tables:</p>
 <ul>
 <li>dimState</li>
 <li>dimDate</li>
@@ -2139,12 +2273,10 @@ class="
 </ul>
 <p>While they had descibed star schemas in my data engineering course, we never build one from scratch and populated the data.  So , this was all new territory for me.</p>
 <p>For this section, if you would like to follow along, use this script:</p>
-<p>My Brother-In-Law, who is a data scientist, coached me through the basics or parsing the data in Python. I started by pulling lists of the unique values in the us-counties.csv files.  I started with states data, since that table was the smallest. I started by using <code>dict(zip('range(len(states_unique))','states'))</code>to create keys for each unique value. This worked for the states at first, but things got hairy when I had to merge the population data.  My table from the census didn't include all of the territories, so I had to go get those figures from other files from the census.</p>
+<h4 id="setting-id-columns">Setting ID columns<a class="anchor-link" href="#setting-id-columns">&#182;</a></h4><p>My Brother-In-Law, who is a data scientist, coached me through the basics or parsing the data in Python. I started by pulling lists of the unique values in the us-counties.csv files.  I started with states data, since that table was the smallest. I started by using <code>dict(zip('range(len(states_unique))','states'))</code>to create keys for each unique value. This worked for the states at first, but things got hairy when I had to merge the population data.  My table from the census didn't include all of the territories, so I had to go get those figures from other files from the census.</p>
 <p>Then things got even more out of hand with creating the county keys.  There are, of course, many counties that share names from state to state.  It's no surprise that &quot;Washington is the most common county name, across 31 states. So each of thes would need its own id number.  THe first time I used the <code>dict(zip())</code> method, I had grouped the common-named states together into one index.  While this may have worked under certain circumstances, it did'nt seem to work for me.  So I switched tactics, and started using <code>pd.merge()</code> to join tables.  It's validation parameter was very helpful in making sure everything was copied either 1 to 1 or 1 to many.  After all of the merges, I just created a column as the <code>index + 1</code>.</p>
-<h2 id="phase-5-creating-the-dashboard">Phase 5: Creating the Dashboard<a class="anchor-link" href="#phase-5-creating-the-dashboard">&#182;</a></h2><p>With everthing indexed and ready to go, it was time to start loading into Tableau.  Tableau's data source UI took some getting used to, and I made some mistakes at first.  But I got my files hooked up with the right connections, and was able to tune the performance options.</p>
-<p>Time to start making some graphs! But...</p>
-<p>I had a lot of trial and error getting my visualizations to work.  Matplotlib had actually been easier to work with; or at least seemed easier.  Tableau had a whole different approach with it UI, and so many levels and layers to the structure of the data between the source and the final viz.</p>
-<h2 id="phase-6-creating-the-database">Phase 6: Creating the Database<a class="anchor-link" href="#phase-6-creating-the-database">&#182;</a></h2><p>Creating the indexes in Python worked well for creating the csv to load to Tableau, it was my original plan to load them into a SQL database, with the index being set by an autoincrementing column.  When I went to put the data into my schema, I had not anticipated having the indexes already generated.</p>
+<p>The date table was a piece of cake after all of that.</p>
+<h4 id="fact-table-aggregations">Fact Table Aggregations<a class="anchor-link" href="#fact-table-aggregations">&#182;</a></h4><p>The fact table was tricky again.  The aggregations had to be done correctly for the data to match the populations in the dimension tables.  Then it was just a matter of making the id columns were properly set to fact table, and drop all the old columns.  And Oila! You've got a normalized dataset!</p>
 
 </div>
 </div>
@@ -2156,7 +2288,49 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="final-takeaways">Final Takeaways<a class="anchor-link" href="#final-takeaways">&#182;</a></h2>
+<h2 id="phase-5-creating-the-dashboard">Phase 5: Creating the Dashboard<a class="anchor-link" href="#phase-5-creating-the-dashboard">&#182;</a></h2><p>The dashboard can be found here:
+<a href="https://public.tableau.com/app/profile/chris.kimmons/viz/NYTCovidMap/Dashboard1">https://public.tableau.com/app/profile/chris.kimmons/viz/NYTCovidMap/Dashboard1</a></p>
+<p>With everthing indexed and ready to go, it was time to start loading into Tableau.  Tableau's data source UI took some getting used to, and I made some mistakes at first.  But I got my files hooked up with the right connections, and was able to tune the performance options.</p>
+<p>Time to start making some graphs! But...</p>
+<p>I had a lot of trial and error getting my visualizations to work.  Matplotlib had actually been easier to work with; or at least seemed easier.  Tableau had a whole different approach with its UI, and so many levels and layers to the structure of the data between the source and the final viz.</p>
+<h4 id="the-map">The Map<a class="anchor-link" href="#the-map">&#182;</a></h4><p>I started with a cloropleth map of the US mainland, using population to color in the states and counties.  I originally had a very zoomed out approach, but it was difficulat to navigate, so I had to build a fairly complicated dashboard to make navigation easier across al of the US territories. Also, the county data was aggregating incorrectly.  In an early attemnt, ever county with the same name summed together.  But the toughest part was grouping the aggregate counties together to represent on the map properly.  In order to do this, I used the group tool in Tableau to add together the county populations, named the groups to match the dimCounty table, and used the grouping for almost every sheet forward.</p>
+<h4 id="the-plots">The Plots<a class="anchor-link" href="#the-plots">&#182;</a></h4><p>I went a bit further in the analysis with the line plots in Tableau.  I added calculations for prevalence, incidence rate, and case-to-death ratio over time. I finally got my plots over-time and my years_overlaid tables, but I wanted to do more with the map. So created some LOD calculations to color the states by prevalence, deaths, and final death-to-case ratio.</p>
+<p>Plotting the years over each other took a lot of time and reworking.  Luckily, I was able to figure out how to do it within one case statement and using the day_of_year column.</p>
+<p>I had a good bit of fortune to meet Abigail Cartus, MPH PhD.  She was generous enought o look over my figures and make sure everything was (mostly) statistacally sound and if anything need to be brushed up. Thanks again Abby!</p>
+<h4 id="interactivity">Interactivity<a class="anchor-link" href="#interactivity">&#182;</a></h4><p>The big map was not efficient for selecting at the county level, so I need a way to drill down.  I found a tutorial on datavizjen.com tha was able to get me started on the concepts that would allow me to toggle between state level and county level.  It involved some very specific filtering, and many complex actions allowing the user to navigate by clicking in the dash board.  Actions are the first thing to show signs of lag, so I had to be very intent with what data I used to keep the speed up.  Also, it involved making a sheet for each territory, which was also a drain on performance, but was really necessary for a clean look.</p>
+<p>I used parameters to select the different calculations on the data.  This way, the user could select which calculations they chose to view.  The calculations can be selected in the drop-down boxes on the right.  Setting up the capculated field for these was not easy, and required more characters than Tableu recommended. But this seemed like the most intuitive way to explore the dat, so I stuck with it.</p>
+<h4 id="refactoring">Refactoring<a class="anchor-link" href="#refactoring">&#182;</a></h4><p>After all of this, my dashboard was usually showing at least 2200 marks. In otherwords, it was pretty laggy when performing actions. So I had to find ways to make it leaner. Adding filters to the context helped dramtically.  Also, decreasing the marks on the dashboard as much as possible without sacrificing the visuals.</p>
+<p>An interesting approach I tried, that I'm not sure if it worked or not, was to use the date_id column every time istead of the full date.  This kept the querying to integers, and not having to parse datetypes. I couldn't convert the ticks to another field, however, so hid the ticks and added the full date to the tooltip so you can see it as you hover over the plot.</p>
+<p>Overall, the dashboard runs ok, seeing as its going thro 3.5 million rows with each query. Still, I want it faster...</p>
+<h2 id="phase-6-creating-the-database">Phase 6: Creating the Database<a class="anchor-link" href="#phase-6-creating-the-database">&#182;</a></h2><p>Creating the indexes in Python worked well for creating the csv to load to Tableau, it was my original plan to load them into a SQL database, with the index being set by an autoincrementing column.  When I went to put the data into my schema, I had not anticipated having the indexes already generated.  So I went back to the drawing board, but luckily I could create an ERD in the PGAdmin ERD generator tool.  This allowed me to plan my table relationships before populating the tables. PGAdmin exported the ERD file as a SQL file to build all the tables with their respective keys. So when it was time to build a MySql version of the database, its was mostly about editing that file, and tailoring it to the data specifically.</p>
+<p>Now I had the schema planned and built in Postgres and MySQL, it was time to poulate the data.  THis took more trial and erro than I would like, but I attempted a few different ways just to explore.  In Postgres, importing was a breeze.  I uploaded two documents with PGAdmin, and two documents using the CLI with the <code>COPY</code> command.</p>
+<p>MySQL was much trickier.  I spent a lot of time with  failed imports, only to find that I needed to declare my separators and line breaks.  I also had to spend a lot of time digging aroung in the variables to disable security features, such as <code>GLOBAL IN_FILE=1</code> and set the path for <code>secure-file-priv</code> in the my.cnf file (it took me ages to find tha file).</p>
+<p>Anyhow, I imported two tables via <code>LOAD INFILE</code> and two using <code>mysqlimport</code>, which was difficult but felt important to understand.  I had one weird glitch, though.  I had set up my aggregations a certain way to work with the map in Tableau, so my Aggregated counties were listed as population=0.  While this was good for aggregating the whole stae or groups of states, if I wanted to use my fact table data, I would need the population data for the aggregates.  So real quick, I wrote a few queries that add the data from the states together and udate the population of the aggregates.</p>
+<p>The one thing I am still working on, is how to keep the aggregates separate from the individual counties.  As of now, my plan is to create a view with the aggregates updated and the states dropped, but I haven't had time yet to implement it.</p>
+<p>The purpose of the database was to be able to link to Tableau, but I only have Tableau public at the moment and can only work from extracts as sources. But the data is inthere, when someone wants to get to it!</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="final-takeaways">Final Takeaways<a class="anchor-link" href="#final-takeaways">&#182;</a></h2><p>This was the biggest project I have done so far, and it had so many components to it.  Boiling it down is going to be tough, but here goes:</p>
+<ul>
+<li>Decide on good column names from the start, and load them from a variable.  Otherwise you will jusping around forever updating your column names</li>
+<li>Learn more statistics! It will help with more thourough EDA</li>
+<li>Tableau needs the data to be a certain way to keep it running smoothly</li>
+<li>Check your indexes twice.  Make sure your data is merging properly</li>
+<li>Always check data types.  You will waste a lot of time not setting them from the start</li>
+<li>Always declare your delimiters, especially in MySQL.  I used up so much time in <code>mysqlimport</code> trying to find what was wrong with my command</li>
+</ul>
+<p>A lot of these concepts are on display in this notebook, which was coded entirely separately from anything in the NYT_Covid repositiory.  This gave me an opportunity to reflect on what I had learned, and test myself on how fast and how clearly I could code my concepts.</p>
+<p>This has been a huge project for me, and I am happy to let it rest now, at least for a little while...</p>
+
 </div>
 </div>
 </div>
