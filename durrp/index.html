@@ -1506,7 +1506,7 @@ Licensed under the Apache License, Version 2.0.
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --><div class="jupyter-wrapper">
-<div id="cell-id=9f74fbc7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=71b2307c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1518,7 +1518,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div>
-<div id="cell-id=a1a4d408" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=55b22aee" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1529,7 +1529,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=ee5bb75c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=72da6ab5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1581,7 +1581,7 @@ You can start it yourself everyday or use chron to automate.
 
 </div>
 </div>
-<div id="cell-id=7d0d847b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=fb916963" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1592,7 +1592,7 @@ You can start it yourself everyday or use chron to automate.
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=7bf3f524" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=8e2ef714" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1614,14 +1614,12 @@ You can start it yourself everyday or use chron to automate.
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
 <span class="kn">from</span> <span class="nn">dateutil.parser</span> <span class="kn">import</span> <span class="n">parse</span>
 </pre></div>
 <div id="cell-2" class="clipboard-copy-txt">import datetime as dt
 import subprocess
-import sys
 import time
 from argparse import ArgumentParser
 from dateutil.parser import parse</div>
@@ -1634,7 +1632,7 @@ from dateutil.parser import parse</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=4ab9922c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=d10f4327" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1666,7 +1664,7 @@ from dateutil.parser import parse</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=1726ea4d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=a68f5a85" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1686,14 +1684,14 @@ from dateutil.parser import parse</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">def</span> <span class="nf">show_notification</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="n">title</span><span class="p">):</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">def</span> <span class="nf">show_notification</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">subtitle</span><span class="p">):</span>
     <span class="c1"># Use AppleScript with a timeout option to clear the notification after 60 seconds (1 minute)</span>
-    <span class="n">script</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;display notification &quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s1">&quot; with title &quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&quot; subtitle &quot;You</span><span class="se">\&#39;</span><span class="s1">ve Got This!&quot; sound name &quot;Submarine&quot;&#39;</span>
+    <span class="n">script</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;display notification &quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s1">&quot; with title &quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&quot; subtitle &quot;</span><span class="si">{</span><span class="n">subtitle</span><span class="si">}</span><span class="s1">&quot; sound name &quot;Submarine&quot;&#39;</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;osascript&#39;</span><span class="p">,</span> <span class="s1">&#39;-e&#39;</span><span class="p">,</span> <span class="n">script</span><span class="p">])</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">def show_notification(message,title):
+<div id="cell-4" class="clipboard-copy-txt">def show_notification(message,title,subtitle):
     # Use AppleScript with a timeout option to clear the notification after 60 seconds (1 minute)
-    script = f'display notification "{message}" with title "{title}" subtitle "You\'ve Got This!" sound name "Submarine"'
+    script = f'display notification "{message}" with title "{title}" subtitle "{subtitle}" sound name "Submarine"'
     subprocess.run(['osascript', '-e', script])</div>
         
         </div>
@@ -1704,7 +1702,7 @@ from dateutil.parser import parse</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a70f4b22" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=15dac721" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1744,7 +1742,7 @@ from dateutil.parser import parse</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=c404a1a0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=44ad7280" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1773,13 +1771,28 @@ from dateutil.parser import parse</div>
                         <span class="s1">&#39;--time_of_day&#39;</span><span class="p">,</span>
                         <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span>
                         <span class="n">help</span><span class="o">=</span><span class="s1">&#39;time you started or want to start the script&#39;</span><span class="p">,</span>
-                        <span class="n">default</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="c1">#.time()</span>
+                        <span class="n">default</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
                         <span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-e&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;--end_time&#39;</span><span class="p">,</span>
                         <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;end_time&#39;</span><span class="p">,</span>
                         <span class="n">help</span><span class="o">=</span><span class="s1">&#39;time you want to end the script&#39;</span><span class="p">,</span>
-                        <span class="n">default</span><span class="o">=</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">8</span><span class="p">))</span><span class="c1">#.time()</span>
+                        <span class="n">default</span><span class="o">=</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">8</span><span class="p">))</span>
+                        <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-i&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;--interval&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;time between notifications (in seconds)&#39;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="mi">300</span>
+                        <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;--subtitle&#39;</span><span class="p">,</span>
+                        <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;subtitle&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;optional text for reminder or encouragement&#39;</span><span class="p">,</span>
+                        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;You</span><span class="se">\&#39;</span><span class="s2">ve Got This!&quot;</span>
                         <span class="p">)</span>
 
     <span class="n">current_hour</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="c1">#dt.datetime.strftime(&quot;%I%p&quot;) # int(dt.datetime.strftime(&quot;%I%p&quot;))</span>
@@ -1795,6 +1808,9 @@ from dateutil.parser import parse</div>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">start_hour</span> <span class="o">=</span> <span class="n">check_for_dt</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">time_of_day</span><span class="p">)</span> <span class="c1">#int(sys.argv[1])</span>
         <span class="n">end_hour</span> <span class="o">=</span> <span class="n">check_for_dt</span><span class="p">(</span> <span class="n">args</span><span class="o">.</span><span class="n">end_time</span><span class="p">)</span> <span class="c1">#int(sys.argv[2])</span>
+        <span class="n">subtitle</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">subtitle</span>
+        <span class="n">interval</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">interval</span>
+        
     <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
         <span class="n">start_hour</span> <span class="o">=</span> <span class="n">current_hour</span>
         <span class="n">end_hour</span> <span class="o">=</span> <span class="mi">17</span>
@@ -1805,8 +1821,8 @@ from dateutil.parser import parse</div>
         
         <span class="n">current_hour</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="c1"># int(dt.datetime.strftime(&quot;%H&quot;))</span>
         <span class="k">if</span> <span class="n">start_hour</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">current_hour</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">end_hour</span><span class="o">.</span><span class="n">time</span><span class="p">():</span>
-            <span class="n">show_notification</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">5 Minutes Has Passed!</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">DURRP</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>  <span class="c1"># 300 seconds = 5 minutes</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>  <span class="c1"># 300 seconds = 5 minutes</span>
+            <span class="n">show_notification</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="si">{</span><span class="n">interval</span><span class="o">/</span><span class="mi">60</span><span class="si">}</span><span class="s2"> Minutes Has Passed!</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">DURRP</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">subtitle</span><span class="o">=</span><span class="n">subtitle</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>  <span class="c1"># 60 seconds = 1 minute</span>
 
@@ -1823,13 +1839,28 @@ def main():
                         '--time_of_day',
                         metavar='time',
                         help='time you started or want to start the script',
-                        default=dt.datetime.today()#.time()
+                        default=dt.datetime.today()
                         )
     parser.add_argument('-e',
                         '--end_time',
                         metavar='end_time',
                         help='time you want to end the script',
-                        default=(dt.datetime.today()+ dt.timedelta(hours=8))#.time()
+                        default=(dt.datetime.today()+ dt.timedelta(hours=8))
+                        )
+    
+    parser.add_argument('-i',
+                        '--interval',
+                        metavar='interval',
+                        type=int,
+                        help='time between notifications (in seconds)',
+                        default=300
+                        )
+    
+    parser.add_argument('-s',
+                        '--subtitle',
+                        metavar='subtitle',
+                        help='optional text for reminder or encouragement',
+                        default="You\'ve Got This!"
                         )
 
     current_hour = dt.datetime.today() #dt.datetime.strftime("%I%p") # int(dt.datetime.strftime("%I%p"))
@@ -1845,6 +1876,9 @@ def main():
     try:
         start_hour = check_for_dt(args.time_of_day) #int(sys.argv[1])
         end_hour = check_for_dt( args.end_time) #int(sys.argv[2])
+        subtitle = args.subtitle
+        interval = args.interval
+        
     except IndexError:
         start_hour = current_hour
         end_hour = 17
@@ -1855,8 +1889,8 @@ def main():
         
         current_hour = dt.datetime.today() # int(dt.datetime.strftime("%H"))
         if start_hour.time() <= current_hour.time() < end_hour.time():
-            show_notification("\'5 Minutes Has Passed!\'", "\'DURRP\'")
-            time.sleep(300)  # 300 seconds = 5 minutes
+            time.sleep(interval)  # 300 seconds = 5 minutes
+            show_notification(message=f"\'{interval/60} Minutes Has Passed!\'", title="\'DURRP\'",subtitle=subtitle)
         else:
             time.sleep(30)  # 60 seconds = 1 minute
 
@@ -1872,7 +1906,7 @@ def main():
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=3fc6f0e5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=59390548" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
